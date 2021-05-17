@@ -1,0 +1,32 @@
+<div class="contentful_post">
+  <h1><%= @post.title %></h1>
+  <img src="<%= @post.photo.url %>" alt="post image" width="50%" height="50%" />
+  <div>
+    Tags: 
+  	<% @tags.each do |tag| %>
+  		<span style="background-color:grey"><%=tag%></span>
+  	<%end%>
+  </div>
+  <br>
+
+  <div class="content">
+  	<%if @content['content']%>
+	  	<% @content['content'].each do |con| %>
+		  	<% if con['nodeType'] == "paragraph"%>
+		  		<%=  render partial: "paragraph", locals: {content: con}%>
+		  	<%elsif con['nodeType'] == "unordered-list" %>
+		  		<%=  render partial: "u_list", locals: {content: con}%>
+		  	<%elsif con['nodeType'] == "list-item" %>
+		  		<%=  render partial: "list_item", locals: {content: con}%>
+		  	<%elsif con['nodeType'] == "text" %>
+		  		<%=  render partial: "text", locals: {content: con}%>
+		  	<%end%>
+		  <%end%>
+		<%end%>
+  </div>
+
+  <div>
+  	<h3> Author: <%=@author%></h3>
+  </div>
+
+</div>

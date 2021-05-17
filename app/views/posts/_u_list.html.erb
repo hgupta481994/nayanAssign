@@ -1,0 +1,15 @@
+<ul class="unordered-list">
+	<%if content['content']%>
+  	<% content['content'].each do |con| %>
+	  	<% if con['nodeType'] == "paragraph"%>
+	  		<%=  render partial: "paragraph", locals: {content: con}%>
+	  	<%elsif con['nodeType'] == "unordered-list" %>
+	  		<%=  render partial: "u_list", locals: {content: con}%>
+	  	<%elsif con['nodeType'] == "list-item" %>
+	  		<%=  render partial: "list_item", locals: {content: con}%>
+	  	<%elsif con['nodeType'] == "text" %>
+	  		<%=  render partial: "text", locals: {content: con}%>
+	  	<%end%>
+	  <%end%>
+	<%end%>
+</ul>

@@ -1,0 +1,8 @@
+<% @posts.each do |post| %>
+  <div class="contentful_post">
+    <h1><%= post.title %></h1>
+    <img src="<%= post.photo.url %>" alt="post image" width="50%" height="50%" />
+    <h2><%= link_to "Details", post_path(post.id)%></h2>
+  </div>
+  <br>
+<% end %>
