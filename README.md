@@ -1,24 +1,13 @@
-# README
+# Posts-Viewer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This an assignment which uses contentful api to get data and view list of posts and also a detailed view of individual post.
 
-Things you may want to cover:
+How to install
 
-* Ruby version
+* clone git repo
 
-* System dependencies
+* run command 'bundle'
 
-* Configuration
+* Add .env file
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Add CONTENTFUL_ACCESS_TOKEN and CONTENTFUL_SPACE_ID with their value in .env file
